@@ -1,5 +1,7 @@
-﻿string stringNumber = "256";
+﻿Console.Write("Введите ваше имя");
+string name = Console.ReadLine();
 
-int numberFromString = Convert.ToInt32(stringNumber);
-int square = numberFromString * numberFromString;
-Console.WriteLine("Квадрат введенного числа равен " + square);
+Console.WriteLine("Введите свой возраст");
+string age = Console.ReadLine();
+
+Console.WriteLine($"Благодарим {name} ({age}) за введенную инфрмацию! Очень важный спам будет отправлятся вам на почту!");

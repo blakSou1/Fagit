@@ -1,39 +1,29 @@
-﻿using System.Runtime.CompilerServices;
+﻿bool[] thimble = new bool[3] { false, false, true };
 
-int magicNumber = 4;
-
-Con();
-
-void Con()
-{
-
-    Console.WriteLine("Угадай число");
-    Console.WriteLine("");
-    Console.WriteLine("Загадано число от 1 до 5. попробуйте его отгадать!");
+    Console.WriteLine("Игра в наперстки");
     Console.WriteLine();
-    Console.Write("Введите ваше число: ");
+    Console.WriteLine("под одним из трех наперстков находится шарик. Попробуй угадать в каком!");
+    Console.WriteLine();
+    Console.Write("Введите ваше число от 1 до 3");
+
+c();
+
+void c()
+{
 
     int input = Convert.ToInt32(Console.ReadLine());
 
-    if(magicNumber == input)
+    if (thimble[input] == true)
     {
 
-        Console.WriteLine("Да! Это число" + magicNumber + "!");
+        Console.WriteLine("Угадал...");
 
     }
     else
     {
 
-        Console.WriteLine("Нет! Это не" + input + "!");
-        Console.WriteLine("попоробуете еще раз?");
-        Console.WriteLine("чтобы закончить нажмите А");
-
-        if (Console.ReadLine() != "A")
-        {
-
-                magicNumber = new Random().Next(0, 5);
-
-        }
+        Console.WriteLine("ты Не угадал! попробуй еще раз");
+        c();
 
     }
 

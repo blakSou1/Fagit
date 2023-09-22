@@ -4,7 +4,7 @@ Console.WriteLine("Квадраты чисел");
 Console.WriteLine();
 Console.WriteLine("Дан ряд чисел:");
 
-for(int i = 0; i < 7; i++)
+for(int i = 0; i < numbers.Length; i++)
 {
 
     Console.Write(numbers[i] + ",");
@@ -14,7 +14,7 @@ for(int i = 0; i < 7; i++)
 Console.WriteLine();
 Console.Write("Квадраты этих чисел:");
 
-for(int i = 0; i < 7; i++)
+for(int i = 0; i < numbers.Length; i++)
 {
 
     Console.Write(numbers + "=" + (numbers[i] * numbers[i]) + ",");

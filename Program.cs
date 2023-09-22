@@ -1,30 +1,22 @@
-﻿bool[] thimble = new bool[3] { false, false, true };
+﻿int[] numbers = new int[] { 1, 3, 5, 7, 11, 13, 17 };
 
-    Console.WriteLine("Игра в наперстки");
-    Console.WriteLine();
-    Console.WriteLine("под одним из трех наперстков находится шарик. Попробуй угадать в каком!");
-    Console.WriteLine();
-    Console.Write("Введите ваше число от 1 до 3");
+Console.WriteLine("Квадраты чисел");
+Console.WriteLine();
+Console.WriteLine("Дан ряд чисел:");
 
-c();
-
-void c()
+for(int i = 0; i < 7; i++)
 {
 
-    int input = Convert.ToInt32(Console.ReadLine());
+    Console.Write(numbers[i] + ",");
 
-    if (thimble[input] == true)
-    {
+}
 
-        Console.WriteLine("Угадал...");
+Console.WriteLine();
+Console.Write("Квадраты этих чисел:");
 
-    }
-    else
-    {
+for(int i = 0; i < 7; i++)
+{
 
-        Console.WriteLine("ты Не угадал! попробуй еще раз");
-        c();
-
-    }
+    Console.Write(numbers + "=" + (numbers[i] * numbers[i]) + ",");
 
 }

@@ -57,7 +57,7 @@ void TwoRums()
     if(lvl > maxLvl)
     {
         maxLvl = lvl;
-    }
+    }//проверяем преодолели ли мы свой рекорд по уровням если да меняем рекорд на новый
 
     Console.WriteLine("Табличка:");
     Console.WriteLine($"Ваше здоровье: {health}");
@@ -65,7 +65,7 @@ void TwoRums()
     Console.WriteLine($"Ваш максимальный ур: {maxLvl}");
     Console.WriteLine($"Перед вами {doors} двери. введите цифру соответствующую двери в которую желаете войти");
 
-    selectedDoor = Convert.ToInt32(Console.ReadKey());
+    selectedDoor = Convert.ToInt32(Console.ReadKey());//получаем число от пользователя соответствующее 1 из доступных для входа дверей
 
     Doors();
 }
@@ -73,7 +73,7 @@ void TwoRums()
 void Doors()
 {
     int randomRums = typeRums[new Random().Next(0, typeRums.Length)];
-
+// генерирует рандомный элемент массива наших комнат
     for(int i = 0; i < doors;)
     {
 
@@ -122,7 +122,7 @@ void Doors()
                     {
                         Console.WriteLine("*стоя здесь ты явно не продвинишся вперед");
                         TwoRums();
-                    }
+                    }// выбираем тип комнаты в которую попадает игрок в зависимости от условий рандомно го числа и числа которое ввёл игрок
 
                 }
 
@@ -130,7 +130,7 @@ void Doors()
             else
             {
                 i++;
-            }
+            }// проверяем корректные ли данные введены
 
         }
 
@@ -142,7 +142,7 @@ void BossRum()
 {
     string Action = Convert.ToString(Console.ReadKey());
 
-    bossDamage += lvl;
+    bossDamage += lvl;//увеличиваем урон босса и скелетов соответственно нынешнему уровню
     enemyDamage++;
 
     if(Action == "a")
@@ -164,7 +164,7 @@ void BossRum()
             maxHealth++;
 
             OneRums();
-        }
+        }//проверяем хватило ли нам здоровье чтобы пережить схватку если нет начинаем сначала
 
     }
     else if(Action == "r")
@@ -176,7 +176,7 @@ void BossRum()
     {
         Console.WriteLine("Инвалид! тебя щас сожрут! действуй быстрее!");
         BossRum();
-    }
+    }//проверяем какое действие решил совершить игрок
 
 }
 
@@ -185,12 +185,12 @@ void NullRum()
     Console.WriteLine($"Вы заходите в {moveRums} комнату");
     Console.WriteLine("*Эта комната абсолютно пустая даже поверхности идеально выглажены. Только двери выделяются из картины");
 
-    moveRums++;
+    moveRums++;//считаем сколько комнат мы посетили
     
     if (doors > 3)
     {
         doors--;
-    }
+    }// редактируем доступное для выбора количество дверей этот момент продумано не до конца из-за чего рушится баланс
 
     OneRums();
 }
@@ -225,7 +225,7 @@ void EnemyRum()
     }
 
     OneRums();
-}
+}//комната с противником 
 
 void RumHil()
 {
@@ -253,7 +253,7 @@ void RumHil()
     Console.WriteLine("*вы подходите к противоположной стене");
 
     OneRums();
-}
+}// комната восполнения здоровья
 
 void ItemRum()
 {
@@ -272,4 +272,4 @@ void ItemRum()
     }
 
     OneRums();
-}
+}// комната бустер увеличивает макс значение здоровья
